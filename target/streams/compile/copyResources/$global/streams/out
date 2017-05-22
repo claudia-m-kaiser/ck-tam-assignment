@@ -1,0 +1,4 @@
+[debug] Copy resource mappings: 
+[debug] 	(/Users/clkaiser/IdeaProjects/ck-tam-assignment/conf/application.conf,/Users/clkaiser/IdeaProjects/ck-tam-assignment/target/scala-2.11/classes/application.conf)
+[debug] 	(/Users/clkaiser/IdeaProjects/ck-tam-assignment/conf/logback.xml,/Users/clkaiser/IdeaProjects/ck-tam-assignment/target/scala-2.11/classes/logback.xml)
+[debug] 	(/Users/clkaiser/IdeaProjects/ck-tam-assignment/conf/routes,/Users/clkaiser/IdeaProjects/ck-tam-assignment/target/scala-2.11/classes/routes)
