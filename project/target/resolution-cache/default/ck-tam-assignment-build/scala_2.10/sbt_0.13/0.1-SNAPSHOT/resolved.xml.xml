@@ -4,7 +4,7 @@
 		module="ck-tam-assignment-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20170522204033"
+		publication="20170523195606"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

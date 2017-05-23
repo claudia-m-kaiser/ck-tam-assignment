@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/clkaiser/IdeaProjects/ck-tam-assignment/conf/routes
-// @DATE:Mon May 22 20:11:29 AEST 2017
+// @DATE:Tue May 23 20:39:11 AEST 2017
 
 
 package router {

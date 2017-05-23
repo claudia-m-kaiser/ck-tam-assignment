@@ -140,6 +140,13 @@
     <orderEntry type="library" name="SBT: xml-apis:xml-apis:1.4.01:jar" level="project" />
     <orderEntry type="library" name="SBT: com.braintreepayments.gateway:braintree-java:2.65.0:jar" level="project" />
     <orderEntry type="library" name="SBT: org.osgi:org.osgi.core:4.2.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.apache.commons:commons-compress:1.9:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:requirejs:2.1.20:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:webjars-locator:0.30:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:webjars-locator-core:0.30:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:webjars-play_2.11:2.5.0:jar" level="project" />
     <orderEntry type="library" name="SBT: com.typesafe.play:filters-helpers_2.11:2.5.14:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:bootstrap:4.0.0-alpha.6-1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:jquery:3.2.0:jar" level="project" />
   </component>
 </module>

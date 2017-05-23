@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/clkaiser/IdeaProjects/ck-tam-assignment/conf/routes
-// @DATE:Mon May 22 20:11:29 AEST 2017
+// @DATE:Tue May 23 20:39:11 AEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -23,6 +23,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:10
+    def saleTransaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.saleTransaction",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sale"})
+        }
+      """
+    )
+  
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
@@ -33,9 +43,29 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:9
+    def getClientToken: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.getClientToken",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "client-token"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def javascriptRoutes: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.javascriptRoutes",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "javascriptRoutes"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:9
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +73,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:16
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
