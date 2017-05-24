@@ -4,8 +4,27 @@
         .fail(() => { alert("Error getting client token!");});
 }*/
 
+
+
 function loadPayPalButton(clientToken){
 
+    var options = {
+        flow: 'checkout', // Required
+        amount: 10.00, // Required
+        currency: 'AUD', // Required
+        locale: 'en_AU',
+        enableShippingAddress: true,
+        shippingAddressEditable: false,
+        shippingAddressOverride: {
+            recipientName: document.getElementById("name").value,
+            line1: document.getElementById("streetAddress").value,
+            city: document.getElementById("suburb").value,
+            postalCode: document.getElementById("postcode").value,
+            state: document.getElementById("state").value,
+            countryCode: 'AU'
+
+         }
+    };
 
     // Create a client.
     braintree.client.create({
@@ -38,24 +57,7 @@ function loadPayPalButton(clientToken){
                 env: 'sandbox', // or 'production'
 
                 payment: function () {
-                    return paypalCheckoutInstance.createPayment({
-                        flow: 'checkout', // Required
-                        amount: 10.00, // Required
-                        currency: 'AUD', // Required
-                        locale: 'en_AU',
-                        enableShippingAddress: true,
-                        shippingAddressEditable: false,
-                        shippingAddressOverride: {
-                            recipientName: 'Scruff McGruff',
-                            line1: '1234 Main St.',
-                            line2: 'Unit 1',
-                            city: 'Chicago',
-                            countryCode: 'US',
-                            postalCode: '60652',
-                            state: 'IL',
-                            phone: '123.456.7890'
-                        }
-                    });
+                    return paypalCheckoutInstance.createPayment(options);
                 },
 
                 onAuthorize: function (data, actions) {
@@ -82,9 +84,33 @@ function loadPayPalButton(clientToken){
                 // is set up and ready to be used.
             });
 
+
         });
 
     });
 }
 
+$( ".form-control").keyup(function() {
+    if($(this).val().length >= 2)  {
+        if($(this).hasClass("form-control-danger")){
+            $(this).removeClass("form-control-danger").closest(".form-group").removeClass('has-danger');
+        }
+        $(this).addClass("form-control-success").closest('.form-group').addClass('has-success');
+    }else{
+        if($(this).hasClass("form-control-success")){
+            $(this).removeClass("form-control-success").closest(".form-group").removeClass('has-success');
+        }
+        $(this).addClass("form-control-danger").closest('.form-group').addClass('has-danger');
+    }
+});
 
+
+function addressFormIsValid(){
+    var valid = true;
+    $(".form-control").each(function() {
+        if($(this).val().length<=2){
+            valid = false;
+        }
+    })
+    return valid;
+}
