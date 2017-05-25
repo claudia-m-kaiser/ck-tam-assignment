@@ -37,7 +37,7 @@ public class HomeController extends Controller {
     public Result index() {
 
         String token = this.braintreeService.getToken();
-        return ok(views.html.index.render(token));
+        return ok(views.html.payment.render(token));
     }
 
     public Result getClientToken(){
