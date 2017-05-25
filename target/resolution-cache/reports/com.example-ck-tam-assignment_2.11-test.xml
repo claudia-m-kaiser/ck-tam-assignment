@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="test"
 		confs="universal, universal-docs, universal-src, compile, runtime, test, provided, optional, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170525095235"/>
+		date="20170525225601"/>
 	<dependencies>
 		<module organisation="org.webjars" name="jquery">
 			<revision name="3.2.0" status="release" pubdate="20170320222859" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://webjars.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="80">
@@ -89,6 +89,28 @@
 				<artifacts>
 					<artifact name="requirejs" type="jar" ext="jar" status="no" details="" size="29737" time="0" location="/Users/clkaiser/.ivy2/cache/org.webjars/requirejs/jars/requirejs-2.1.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/webjars/requirejs/2.1.20/requirejs-2.1.20.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.code.gson" name="gson">
+			<revision name="1.7.1" status="release" pubdate="20110414060032" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://code.google.com/p/google-gson/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="-1">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3643" time="0" location="/Users/clkaiser/.ivy2/cache/com.google.code.gson/gson/ivy-1.7.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/gson/gson/1.7.1/gson-1.7.1.pom"/>
+				<evicted-by rev="2.3.1"/>
+				<caller organisation="com.example" name="ck-tam-assignment_2.11" conf="test, compile, runtime" rev="1.7.1" rev-constraint-default="1.7.1" rev-constraint-dynamic="1.7.1" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="2.3.1" status="release" pubdate="20141120204214" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/google-gson/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, compile(*), master, default(compile)" position="108">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3384" time="0" location="/Users/clkaiser/.ivy2/cache/com.google.code.gson/gson/ivy-2.3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom"/>
+				<caller organisation="com.example" name="ck-tam-assignment_2.11" conf="test, compile, runtime" rev="1.7.1" rev-constraint-default="1.7.1" rev-constraint-dynamic="1.7.1" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="org.seleniumhq.selenium" name="selenium-remote-driver" conf="compile, runtime" rev="2.3.1" rev-constraint-default="2.3.1" rev-constraint-dynamic="2.3.1" callerrev="2.48.2"/>
+				<caller organisation="org.seleniumhq.selenium" name="selenium-api" conf="compile, runtime" rev="2.3.1" rev-constraint-default="2.3.1" rev-constraint-dynamic="2.3.1" callerrev="2.48.2"/>
+				<artifacts>
+					<artifact name="gson" type="jar" ext="jar" status="no" details="" size="210856" time="0" location="/Users/clkaiser/.ivy2/cache/com.google.code.gson/gson/jars/gson-2.3.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -538,19 +560,6 @@
 				<artifacts>
 					<artifact name="selenium-api" type="jar" ext="jar" status="no" details="" size="142044" time="0" location="/Users/clkaiser/.ivy2/cache/org.seleniumhq.selenium/selenium-api/jars/selenium-api-2.48.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/2.48.2/selenium-api-2.48.2.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="com.google.code.gson" name="gson">
-			<revision name="2.3.1" status="release" pubdate="20141120204214" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/google-gson/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="108">
-				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="3384" time="0" location="/Users/clkaiser/.ivy2/cache/com.google.code.gson/gson/ivy-2.3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom"/>
-				<caller organisation="org.seleniumhq.selenium" name="selenium-remote-driver" conf="compile, runtime" rev="2.3.1" rev-constraint-default="2.3.1" rev-constraint-dynamic="2.3.1" callerrev="2.48.2"/>
-				<caller organisation="org.seleniumhq.selenium" name="selenium-api" conf="compile, runtime" rev="2.3.1" rev-constraint-default="2.3.1" rev-constraint-dynamic="2.3.1" callerrev="2.48.2"/>
-				<artifacts>
-					<artifact name="gson" type="jar" ext="jar" status="no" details="" size="210856" time="0" location="/Users/clkaiser/.ivy2/cache/com.google.code.gson/gson/jars/gson-2.3.1.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

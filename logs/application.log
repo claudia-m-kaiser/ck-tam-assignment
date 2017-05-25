@@ -1,2 +1,172 @@
-2017-05-25 09:55:27,686 [INFO] from play.api.Play in ForkJoinPool-1-worker-3 - Application started (Dev)
-2017-05-25 10:01:29,259 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2017-05-25 10:31:04,932 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2017-05-25 10:36:44,265 [INFO] from application in application-akka.actor.default-dispatcher-55 - Success!: myrxvf5q
+2017-05-25 11:09:29,210 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-54 - Application started (Dev)
+2017-05-25 11:10:24,864 [INFO] from application in application-akka.actor.default-dispatcher-4 - Success!: 5btpyfhg
+2017-05-25 11:12:44,985 [INFO] from application in application-akka.actor.default-dispatcher-16 - Success!: paw4tm01
+2017-05-25 11:14:23,966 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-26 - Application started (Dev)
+2017-05-25 11:14:55,753 [INFO] from application in application-akka.actor.default-dispatcher-7 - Success!: fzhh0qwb
+2017-05-25 11:15:44,763 [INFO] from application in application-akka.actor.default-dispatcher-4 - Success!: 3gaax4z8
+2017-05-25 11:18:38,191 [INFO] from application in application-akka.actor.default-dispatcher-29 - Success!: 3km4f07c
+2017-05-25 11:20:46,437 [INFO] from application in application-akka.actor.default-dispatcher-43 - Success!: a7785gfc
+2017-05-25 11:23:21,059 [INFO] from application in application-akka.actor.default-dispatcher-41 - Success!: gzs26skj
+2017-05-25 11:25:47,572 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-52 - Application started (Dev)
+2017-05-25 11:26:21,679 [INFO] from application in application-akka.actor.default-dispatcher-2 - Success!: 8vf44bnn
+2017-05-25 11:29:24,080 [INFO] from application in application-akka.actor.default-dispatcher-5 - Success!: 9vpnadcw
+2017-05-25 11:31:19,894 [INFO] from application in application-akka.actor.default-dispatcher-16 - Success!: aydhnvj6
+2017-05-25 11:34:07,400 [INFO] from application in application-akka.actor.default-dispatcher-13 - Success!: d3vacqwt
+2017-05-25 11:37:45,971 [INFO] from application in application-akka.actor.default-dispatcher-22 - Success!: 7tr7fv50
+2017-05-25 11:40:23,959 [INFO] from application in application-akka.actor.default-dispatcher-32 - Success!: 87wvt5pk
+2017-05-25 11:43:24,846 [INFO] from application in application-akka.actor.default-dispatcher-47 - Success!: m43pz3wz
+2017-05-25 11:44:50,501 [INFO] from application in application-akka.actor.default-dispatcher-45 - Success!: re4t0dr6
+2017-05-25 11:46:40,710 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-58 - Application started (Dev)
+2017-05-25 11:47:14,374 [INFO] from application in application-akka.actor.default-dispatcher-4 - Success!: rq7r9gph
+2017-05-25 12:20:06,545 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-05-25 12:24:53,970 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-12 - Application started (Dev)
+2017-05-25 16:31:14,706 [INFO] from application in application-akka.actor.default-dispatcher-30 - Success!: 4s65tkm6
+2017-05-25 16:32:43,536 [INFO] from application in application-akka.actor.default-dispatcher-33 - Success!: r0z5zfnf
+2017-05-25 16:37:30,672 [ERROR] from application in application-akka.actor.default-dispatcher-45 - Error!: Funding Instrument In The PayPal Account Was Declined By The Processor Or Bank, Or It Can't Be Used For This Payment
+2017-05-25 16:51:48,012 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-38 - Application started (Dev)
+2017-05-25 18:47:13,968 [ERROR] from application in application-akka.actor.default-dispatcher-2 - Error!: Funding Instrument In The PayPal Account Was Declined By The Processor Or Bank, Or It Can't Be Used For This Payment
+2017-05-25 18:47:57,326 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2017-05-25 18:53:04,779 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2017-05-25 19:10:36,649 [ERROR] from application in netty-event-loop-4 - 
+
+! @745k9o465 - Internal server error, for (GET) [/] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[')' expected]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at scala.util.Either$LeftProjection.map(Either.scala:377)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
+	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:339)
+	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:44)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:40)
+	at play.runsupport.Reloader.reload(Reloader.scala:337)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:123)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:121)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2017-05-25 19:11:48,287 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-05-25 22:56:08,268 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-74 - Application started (Dev)
+2017-05-25 23:02:55,264 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-19 - Application started (Dev)
+2017-05-25 23:20:46,071 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
+2017-05-25 23:22:24,929 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-16 - Application started (Dev)
+2017-05-26 08:28:23,649 [ERROR] from application in application-akka.actor.default-dispatcher-31 - 
+
+! @745oahfc1 - Internal server error, for (GET) [/] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[UnexpectedException: Network is unreachable]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:293)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:220)
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:160)
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:188)
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:100)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:100)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:99)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:346)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:345)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36)
+	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:44)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:252)
+	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:308)
+	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:293)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:255)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:36)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: com.braintreegateway.exceptions.UnexpectedException: Network is unreachable
+	at com.braintreegateway.util.Http.httpRequest(Http.java:149)
+	at com.braintreegateway.util.Http.post(Http.java:71)
+	at com.braintreegateway.ClientTokenGateway.generate(ClientTokenGateway.java:37)
+	at com.braintreegateway.ClientTokenGateway.generate(ClientTokenGateway.java:31)
+	at service.BraintreeService.getToken(BraintreeService.java:25)
+	at controllers.HomeController.index(HomeController.java:41)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(Routes.scala:149)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(Routes.scala:149)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:157)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:156)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:136)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:73)
+	at play.http.HttpRequestHandler$1.call(HttpRequestHandler.java:54)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:494)
+	at play.core.j.JavaAction.apply(JavaAction.scala:108)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:111)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:110)
+	at scala.Option.map(Option.scala:146)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:110)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:103)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
+	... 14 common frames omitted
+Caused by: java.net.SocketException: Network is unreachable
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:656)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:275)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:371)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1104)
+	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:988)
+	at sun.net.www.protocol.http.HttpURLConnection$6.run(HttpURLConnection.java:986)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessController.doPrivileged(AccessController.java:713)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:985)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1282)
+	at sun.net.www.protocol.http.HttpURLConnection.access$100(HttpURLConnection.java:90)
+	at sun.net.www.protocol.http.HttpURLConnection$8.run(HttpURLConnection.java:1249)
+	at sun.net.www.protocol.http.HttpURLConnection$8.run(HttpURLConnection.java:1247)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessController.doPrivileged(AccessController.java:713)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1246)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:250)
+	at com.braintreegateway.util.Http.httpRequest(Http.java:109)
+	... 45 common frames omitted

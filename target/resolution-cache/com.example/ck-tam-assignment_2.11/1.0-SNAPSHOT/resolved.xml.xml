@@ -4,7 +4,7 @@
 		module="ck-tam-assignment_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20170525095235"
+		publication="20170525225601"
 	>
 		<description>
 		ck-tam-assignment
@@ -51,6 +51,7 @@
 		<dependency org="com.typesafe.play" name="play-logback_2.11" rev="2.5.14" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="filters-helpers_2.11" rev="2.5.14" conf="compile->default(compile)"/>
 		<dependency org="com.braintreepayments.gateway" name="braintree-java" rev="2.65.0" conf="compile->default(compile)"/>
+		<dependency org="com.google.code.gson" name="gson" rev="1.7.1" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="webjars-play_2.11" rev="2.5.0" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="bootstrap" rev="4.0.0-alpha.6-1" conf="compile->default(compile)">
 			<exclude org="org.webjars" module="jquery" name="*" type="*" ext="*" conf="" matcher="exact"/>

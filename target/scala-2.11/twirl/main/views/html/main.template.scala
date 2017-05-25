@@ -24,12 +24,12 @@ import play.mvc.Http.Context.Implicit._
 class main extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[String,Html,Html,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(title: String)(scripts: Html)(content: Html):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(title: String, scripts: Html = Html(""))(content: Html):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.47*/("""
+Seq[Any](format.raw/*1.58*/("""
 
 """),format.raw/*3.1*/("""<!DOCTYPE html>
 <html lang="en">
@@ -88,9 +88,9 @@ Seq[Any](format.raw/*1.47*/("""
     }
   }
 
-  def render(title:String,scripts:Html,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(title)(scripts)(content)
+  def render(title:String,scripts:Html,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(title,scripts)(content)
 
-  def f:((String) => (Html) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (title) => (scripts) => (content) => apply(title)(scripts)(content)
+  def f:((String,Html) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (title,scripts) => (content) => apply(title,scripts)(content)
 
   def ref: this.type = this
 
@@ -103,10 +103,10 @@ Seq[Any](format.raw/*1.47*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Thu May 25 09:55:20 AEST 2017
+                  DATE: Thu May 25 16:51:42 AEST 2017
                   SOURCE: /Users/clkaiser/IdeaProjects/ck-tam-assignment/app/views/main.scala.html
-                  HASH: 36483984cb84c2d2686364be8bc44a72a79a8805
-                  MATRIX: 753->1|893->46|921->48|1437->537|1452->543|1514->584|1598->641|1613->647|1674->686|3055->2040|3083->2047|3117->2054|3204->2114|3219->2120|3272->2152|3329->2182|3344->2188|3405->2228|3676->2473|3704->2480|3735->2484
+                  HASH: 111358024764488d97b92854508ed22a5d6dd1d0
+                  MATRIX: 753->1|904->57|932->59|1448->548|1463->554|1525->595|1609->652|1624->658|1685->697|3066->2051|3094->2058|3128->2065|3215->2125|3230->2131|3283->2163|3340->2193|3355->2199|3416->2239|3687->2484|3715->2491|3746->2495
                   LINES: 27->1|32->1|34->3|44->13|44->13|44->13|45->14|45->14|45->14|74->43|74->43|75->44|78->47|78->47|78->47|79->48|79->48|79->48|82->51|82->51|84->53
                   -- GENERATED --
               */

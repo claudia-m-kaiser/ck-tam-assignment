@@ -68,7 +68,14 @@ function loadPayPalButton(clientToken){
                     return paypalCheckoutInstance.tokenizePayment(data)
                         .then(function (payload) {
                             $.post(jsRoutes.controllers.HomeController.saleTransaction(), { nonce: payload.nonce })
-                                .done(data => {console.log(data);})
+                                .done(data => {
+                                    if(data.status === "PROCESSOR_DECLINED"){
+                                        actions.restart();
+                                    }else
+                                    {
+                                        showTransactionResult(data, actions);
+                                    }
+                                })
                                 .fail(() => { alert("Error creating transaction");});
 
                             // Submit `payload.nonce` to your server
@@ -117,4 +124,11 @@ function addressFormIsValid(){
         }
     })
     return valid;
+}
+
+function showTransactionResult(transaction){
+    $("#json").html(JSON.stringify(transaction,null,3));
+    $("#transactionResult").removeClass("hidden");
+    $("#payment-alert").html("Payment successful");
+    $("#payment-alert").addClass("alert-success");
 }

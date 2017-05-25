@@ -14,6 +14,8 @@ import play.routing.JavaScriptReverseRouter;
 import javax.inject.Inject;
 import java.util.Map;
 
+import static play.libs.Json.*;
+
 /**
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
@@ -55,19 +57,27 @@ public class HomeController extends Controller {
 
         // Capturing the funds using the nonce received from the client
 
-        Transaction transaction = this.braintreeService.saleTransaction(nonce);
+        com.braintreegateway.Result<Transaction> transactionResult = this.braintreeService.saleTransaction(nonce);
 
         ObjectNode result = Json.newObject();
 
-        if(transaction == null) {
-            result.put("status", "KO");
-            result.put("message", "Could not process payment");
-            return badRequest(result);
+        if(transactionResult.getTarget() == null) {
+            return ok(transactionInformation(transactionResult.getTransaction()));
         } else {
-            result.put("status", "OK");
-            result.put("transaction_id", transaction.getId());
-            return ok(result);
+            return ok(transactionInformation(transactionResult.getTarget()));
         }
+    }
+
+    private ObjectNode transactionInformation(Transaction transaction){
+
+        ObjectNode result = Json.newObject();
+
+        result.put("status", transaction.getStatus().toString());
+        result.put("id", transaction.getId());
+        result.put("processorResponseCode", transaction.getProcessorResponseCode());
+        result.put("processorResponseText", transaction.getProcessorResponseText());
+        result.set("paypalDetails", Json.toJson(transaction.getPayPalDetails()));
+        return result;
     }
 
     public Result javascriptRoutes() {

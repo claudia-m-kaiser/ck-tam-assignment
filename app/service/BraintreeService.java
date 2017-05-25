@@ -25,7 +25,7 @@ public class BraintreeService {
         return this.gateway.clientToken().generate();
     }
 
-    public Transaction saleTransaction(String nonce) {
+    public Result<Transaction> saleTransaction(String nonce) {
 
         TransactionRequest transactionRequest = new TransactionRequest()
                 .amount(new BigDecimal("1.00"))
@@ -37,19 +37,8 @@ public class BraintreeService {
 
         Result<Transaction> transactionResult = this.gateway.transaction().sale(transactionRequest);
 
-        return checkTransactionResult(transactionResult);
+        return transactionResult;
     }
 
-    private Transaction checkTransactionResult(Result<Transaction> transactionResult){
-        if (transactionResult.isSuccess()) {
-
-            Logger.info("Success!: " + transactionResult.getTarget().getId());
-            return transactionResult.getTarget();
-
-        } else {
-            Logger.error("Error!: " + transactionResult.getMessage());
-            return null;
-        }
-    }
 
 }

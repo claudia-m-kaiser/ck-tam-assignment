@@ -6,4 +6,4 @@ body {
     text-align: center;
 }
 
-#payment.hidden { visibility:hidden; }
+.hidden { visibility:hidden; }
