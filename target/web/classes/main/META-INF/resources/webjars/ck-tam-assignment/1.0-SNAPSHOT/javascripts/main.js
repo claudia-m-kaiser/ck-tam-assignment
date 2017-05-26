@@ -3,12 +3,31 @@ $("#continue-to-payment").click(function(){
     if(!addressFormIsValid()){
         alert("Please fill in your address details");
     }else{
+        disableAddressForm();
         loadPayPalButton(clientToken);
         $("#payment").removeClass("hidden");
         document.location.href="#payment";
     }
 
 });
+
+function addressFormIsValid(){
+    var valid = true;
+    $(".form-control").each(function() {
+        if($(this).val().length<=2){
+            valid = false;
+        }
+    })
+    return valid;
+}
+
+function disableAddressForm(){
+    $(".form-control").each(function(){
+        $(this).prop("disabled", true);
+        $("#continue-to-payment").html("Change address details");
+        $("#continue-to-payment").removeClass("btn-success").addClass("btn-default");
+    })
+}
 
 function loadPayPalButton(clientToken){
 
@@ -67,13 +86,15 @@ function loadPayPalButton(clientToken){
                 onAuthorize: function (data, actions) {
                     return paypalCheckoutInstance.tokenizePayment(data)
                         .then(function (payload) {
+                                $("#overlay").fadeIn();
                             $.post(jsRoutes.controllers.HomeController.saleTransaction(), { nonce: payload.nonce })
                                 .done(data => {
-                                    if(data.status === "PROCESSOR_DECLINED"){
+                                    if(data.processorResponseCode === "2074"){
                                         actions.restart();
                                     }else
                                     {
-                                        showTransactionResult(data, actions);
+                                        showTransactionResult(data);
+                                        $("#overlay").fadeOut();
                                     }
                                 })
                                 .fail(() => { alert("Error creating transaction");});
@@ -90,9 +111,8 @@ function loadPayPalButton(clientToken){
                     console.error("checkout.js error", err);
                 }
             }, "#paypal-button").then(function () {
-                // The PayPal button will be rendered in an html element with the id
-                // `paypal-button`. This function will be called when the PayPal button
-                // is set up and ready to be used.
+                //The PayPal button is ready to be used
+                $("#loading-paypal-spinner").addClass("hidden");
             });
 
 
@@ -103,32 +123,23 @@ function loadPayPalButton(clientToken){
 
 $( ".form-control").keyup(function() {
     if($(this).val().length >= 2)  {
-        if($(this).hasClass("form-control-danger")){
-            $(this).removeClass("form-control-danger").closest(".form-group").removeClass("has-danger");
-        }
+        $(this).removeClass("form-control-error").closest(".form-group").removeClass("has-error");
         $(this).addClass("form-control-success").closest(".form-group").addClass("has-success");
     }else{
-        if($(this).hasClass("form-control-success")){
-            $(this).removeClass("form-control-success").closest(".form-group").removeClass("has-success");
-        }
-        $(this).addClass("form-control-danger").closest(".form-group").addClass("has-danger");
+        $(this).removeClass("form-control-success").closest(".form-group").removeClass("has-success");
+        $(this).addClass("form-control-error").closest(".form-group").addClass("has-error");
     }
 });
-
-
-function addressFormIsValid(){
-    var valid = true;
-    $(".form-control").each(function() {
-        if($(this).val().length<=2){
-            valid = false;
-        }
-    })
-    return valid;
-}
 
 function showTransactionResult(transaction){
     $("#json").html(JSON.stringify(transaction,null,3));
     $("#transactionResult").removeClass("hidden");
-    $("#payment-alert").html("Payment successful");
-    $("#payment-alert").addClass("alert-success");
+
+    if(transaction.processorResponseCode == "1000"){ //if transaction was approved
+        $("#payment-alert").html("Payment successful");
+        $("#payment-alert").removeClass("alert-danger").addClass("alert-success");
+    }else{
+        $("#payment-alert").html("Payment unsuccessful");
+        $("#payment-alert").removeClass("alert-success").addClass("alert-danger");
+    }
 }

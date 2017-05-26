@@ -21,36 +21,33 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-     object payment_Scope1 {
-import com.google.gson.Gson
-
 class payment extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*3.2*/(clientToken:String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(clientToken:String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
-def /*4.2*/scripts/*4.9*/:play.twirl.api.HtmlFormat.Appendable = {_display_(
+def /*2.2*/scripts/*2.9*/:play.twirl.api.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*4.13*/("""
+Seq[Any](format.raw/*2.13*/("""
 
-    """),format.raw/*6.5*/("""<script src="https://js.braintreegateway.com/web/3.15.0/js/client.min.js"></script>
+    """),format.raw/*4.5*/("""<script src="https://js.braintreegateway.com/web/3.15.0/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.15.0/js/paypal-checkout.min.js"></script>
     <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
     <script>
-      $( document ).ready(function() """),format.raw/*10.38*/("""{"""),format.raw/*10.39*/("""
-          """),format.raw/*11.11*/("""window.clientToken = """"),_display_(/*11.34*/clientToken),format.raw/*11.45*/("""";
-      """),format.raw/*12.7*/("""}"""),format.raw/*12.8*/(""");
+      $( document ).ready(function() """),format.raw/*8.38*/("""{"""),format.raw/*8.39*/("""
+          """),format.raw/*9.11*/("""window.clientToken = """"),_display_(/*9.34*/clientToken),format.raw/*9.45*/("""";
+      """),format.raw/*10.7*/("""}"""),format.raw/*10.8*/(""");
 
     </script>
 
 """)))};
-Seq[Any](format.raw/*3.22*/("""
-"""),format.raw/*16.2*/("""
+Seq[Any](format.raw/*1.22*/("""
+"""),format.raw/*14.2*/("""
 
-"""),_display_(/*18.2*/main("Payment",scripts)/*18.25*/ {_display_(Seq[Any](format.raw/*18.27*/("""
-    """),format.raw/*19.5*/("""<div class="col-md-6 text-left">
+"""),_display_(/*16.2*/main("Payment",scripts)/*16.25*/ {_display_(Seq[Any](format.raw/*16.27*/("""
+    """),format.raw/*17.5*/("""<div class="col-md-6 text-left">
         <div href="#address-form" id="address-form" class="row">
             <div class="col-md-12 text-left">
                 <h4>Please enter your shipping details</h4>
@@ -87,7 +84,7 @@ Seq[Any](format.raw/*3.22*/("""
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button id="continue-to-payment" class="btn btn-default">Continue to payment</button>
+                            <button id="continue-to-payment" class="btn btn-success" data-button-type="payment">Continue to payment</button>
                         </div>
                     </div>
                 </form>
@@ -96,6 +93,7 @@ Seq[Any](format.raw/*3.22*/("""
                     <div class="col-md-8 text-left">
                         <h4>Please click the PayPal button to complete your payment</h4>
                         <div class="col-sm-offset-2 col-sm-6" id="paypal-button"> </div>
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw" id="loading-paypal-spinner"></i>
                     </div>
                 </div>
             </div>
@@ -108,7 +106,7 @@ Seq[Any](format.raw/*3.22*/("""
         </div>
     </div>
 
-""")))}),format.raw/*77.2*/("""
+""")))}),format.raw/*76.2*/("""
 """))
       }
     }
@@ -124,17 +122,16 @@ Seq[Any](format.raw/*3.22*/("""
 
 
 }
-}
 
 /**/
-object payment extends payment_Scope0.payment_Scope1.payment
+object payment extends payment_Scope0.payment
               /*
                   -- GENERATED --
-                  DATE: Thu May 25 23:22:21 AEST 2017
+                  DATE: Fri May 26 15:01:46 AEST 2017
                   SOURCE: /Users/clkaiser/IdeaProjects/ck-tam-assignment/app/views/payment.scala.html
-                  HASH: 2839b6013779c3fad2add996880989a80e73e0c6
-                  MATRIX: 807->31|905->53|919->60|999->64|1031->70|1379->390|1408->391|1447->402|1497->425|1529->436|1565->445|1593->446|1652->51|1680->466|1709->469|1741->492|1781->494|1813->499|4749->3405
-                  LINES: 30->3|34->4|34->4|36->4|38->6|42->10|42->10|43->11|43->11|43->11|44->12|44->12|49->3|50->16|52->18|52->18|52->18|53->19|111->77
+                  HASH: ce57ba28104f5baa9d581e02e5f6139e65f00844
+                  MATRIX: 749->1|847->23|861->30|941->34|973->40|1320->360|1348->361|1386->372|1435->395|1466->406|1502->415|1530->416|1589->21|1617->436|1646->439|1678->462|1718->464|1750->469|4815->3504
+                  LINES: 27->1|31->2|31->2|33->2|35->4|39->8|39->8|40->9|40->9|40->9|41->10|41->10|46->1|47->14|49->16|49->16|49->16|50->17|109->76
                   -- GENERATED --
               */
           
