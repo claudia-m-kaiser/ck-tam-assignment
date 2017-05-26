@@ -1,5 +1,22 @@
-$("#continue-to-payment").click(function(){
+
+$("#address-form").on("click","button",(function(){
     event.preventDefault();
+    var action = $(this).attr("data-button-action");
+    if(action === "changeAddress"){
+
+        $("#paypal-button").html("");//Remove PayPal button
+        $("#payment").addClass("hidden"); //Hide payment options
+        $("#loading-paypal-spinner").removeClass("hidden");
+
+        enableAddressForm();
+    }
+    if(action === "payment") {
+        showPaymentOptions();
+    }
+
+}));
+
+function showPaymentOptions(){
     if(!addressFormIsValid()){
         alert("Please fill in your address details");
     }else{
@@ -8,8 +25,7 @@ $("#continue-to-payment").click(function(){
         $("#payment").removeClass("hidden");
         document.location.href="#payment";
     }
-
-});
+}
 
 function addressFormIsValid(){
     var valid = true;
@@ -22,11 +38,17 @@ function addressFormIsValid(){
 }
 
 function disableAddressForm(){
-    $(".form-control").each(function(){
-        $(this).prop("disabled", true);
-        $("#continue-to-payment").html("Change address details");
-        $("#continue-to-payment").removeClass("btn-success").addClass("btn-default");
-    })
+    $(".form-control").each(function(){$(this).prop("disabled", true);});
+    $("#form-button").html("Change address details");
+    $("#form-button").removeClass("btn-success").addClass("btn-default");
+    $("#form-button").attr("data-button-action", "changeAddress");
+}
+
+function enableAddressForm(){
+    $(".form-control").each(function(){$(this).prop("disabled", false);});
+    $("#form-button").html("Continue to payment");
+    $("#form-button").removeClass("btn-default").addClass("btn-success");
+    $("#form-button").attr("data-button-action", "payment");
 }
 
 function loadPayPalButton(clientToken){
@@ -54,6 +76,7 @@ function loadPayPalButton(clientToken){
         authorization: clientToken
     }, function (clientErr, clientInstance) {
 
+        client = clientInstance;
         // Stop if there was a problem creating the client.
         // This could happen if there is a network error or if the authorization
         // is invalid.

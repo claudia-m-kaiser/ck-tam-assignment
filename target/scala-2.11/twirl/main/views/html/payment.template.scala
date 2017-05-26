@@ -47,66 +47,84 @@ Seq[Any](format.raw/*1.22*/("""
 """),format.raw/*14.2*/("""
 
 """),_display_(/*16.2*/main("Payment",scripts)/*16.25*/ {_display_(Seq[Any](format.raw/*16.27*/("""
-    """),format.raw/*17.5*/("""<div class="col-md-6 text-left">
-        <div href="#address-form" id="address-form" class="row">
-            <div class="col-md-12 text-left">
-                <h4>Please enter your shipping details</h4>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Full name</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="name" value="Jane Doe">
+    """),format.raw/*17.5*/("""<div class="row">
+        <div class="col-md-6 text-left">
+            <div href="#address-form" id="address-form" class="row">
+                <div class="col-md-12 text-left">
+                    <h5>Please enter your shipping details</h5>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Full name</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="name" value="Jane Doe">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="streetAddress" class="col-sm-2 control-label">Street address</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="streetAddress" value="1 York Street">
+                        <div class="form-group">
+                            <label for="streetAddress" class="col-sm-2 control-label">Street address</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="streetAddress" value="1 York Street">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="suburb" class="col-sm-2 control-label">Suburb</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="suburb" value="Sydney">
+                        <div class="form-group">
+                            <label for="suburb" class="col-sm-2 control-label">Suburb</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="suburb" value="Sydney">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="postcode" class="col-sm-2 control-label">Postcode</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="postcode" value="2011">
+                        <div class="form-group">
+                            <label for="postcode" class="col-sm-2 control-label">Postcode</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="postcode" value="2011">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="state" class="col-sm-2 control-label">State</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="state" value="NSW">
+                        <div class="form-group">
+                            <label for="state" class="col-sm-2 control-label">State</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="state" value="NSW">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button id="continue-to-payment" class="btn btn-success" data-button-type="payment">Continue to payment</button>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" id="form-button" class="btn btn-success" data-button-action="payment">Continue to payment</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-                <hr>
-                <div class="row hidden" href="#payment" id="payment">
-                    <div class="col-md-8 text-left">
-                        <h4>Please click the PayPal button to complete your payment</h4>
-                        <div class="col-sm-offset-2 col-sm-6" id="paypal-button"> </div>
-                        <i class="fa fa-spinner fa-spin fa-3x fa-fw" id="loading-paypal-spinner"></i>
-                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-left">
+            <div class="row hidden" id="transactionResult">
+                <div class="col-md-12">
+                    <div class="alert" id="payment-alert" role="alert"></div>
+                    <pre id="json"></pre>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6 text-left">
-        <div class="row hidden" id="transactionResult">
-            <div class="alert" id="payment-alert" role="alert"></div>
-            <pre id="json"></pre>
+    <hr>
+    <div class="row hidden" href="#payment" id="payment">
+        <div class="col-md-4 text-left">
+            <h5>Please click the PayPal button to complete your payment</h5>
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw" id="loading-paypal-spinner"></i>
+            <div id="paypal-button"> </div>
+        </div>
+        <div class="col-md-8 text-left">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sandbox test accounts</h3>
+                </div>
+                <div class="panel-body">
+                    <p>To simulate a successful transaction:<br>
+                       <strong>Email: </strong>jane.doe@email.xyz<br>
+                        <strong>Password: </strong>qwer1234</p>
+                    <p>To simulate a 10486 error:<br>
+                       <strong>Email: </strong>CCREJECT-REFUSED_AU@paypal.com<br>
+                        <strong>Password: </strong>qwer1234</p>
+                </div>
+            </div>
         </div>
     </div>
-
-""")))}),format.raw/*76.2*/("""
+""")))}),format.raw/*94.2*/("""
 """))
       }
     }
@@ -127,11 +145,11 @@ Seq[Any](format.raw/*1.22*/("""
 object payment extends payment_Scope0.payment
               /*
                   -- GENERATED --
-                  DATE: Fri May 26 15:01:46 AEST 2017
+                  DATE: Fri May 26 23:05:40 AEST 2017
                   SOURCE: /Users/clkaiser/IdeaProjects/ck-tam-assignment/app/views/payment.scala.html
-                  HASH: ce57ba28104f5baa9d581e02e5f6139e65f00844
-                  MATRIX: 749->1|847->23|861->30|941->34|973->40|1320->360|1348->361|1386->372|1435->395|1466->406|1502->415|1530->416|1589->21|1617->436|1646->439|1678->462|1718->464|1750->469|4815->3504
-                  LINES: 27->1|31->2|31->2|33->2|35->4|39->8|39->8|40->9|40->9|40->9|41->10|41->10|46->1|47->14|49->16|49->16|49->16|50->17|109->76
+                  HASH: 91a8d4abda51afee153a8be6dea41d447026f8bc
+                  MATRIX: 749->1|847->23|861->30|941->34|973->40|1320->360|1348->361|1386->372|1435->395|1466->406|1502->415|1530->416|1589->21|1617->436|1646->439|1678->462|1718->464|1750->469|5719->4410
+                  LINES: 27->1|31->2|31->2|33->2|35->4|39->8|39->8|40->9|40->9|40->9|41->10|41->10|46->1|47->14|49->16|49->16|49->16|50->17|127->94
                   -- GENERATED --
               */
           
