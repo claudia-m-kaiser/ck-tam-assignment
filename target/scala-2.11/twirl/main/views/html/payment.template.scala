@@ -109,22 +109,27 @@ Seq[Any](format.raw/*1.22*/("""
             <div id="paypal-button"> </div>
         </div>
         <div class="col-md-8 text-left">
-            <div class="panel panel-primary">
+            <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Sandbox test accounts</h3>
+                    <h3 class="panel-title">Simulate a successful transaction on Sandbox</h3>
                 </div>
                 <div class="panel-body">
-                    <p>To simulate a successful transaction:<br>
-                       <strong>Email: </strong>jane.doe@email.xyz<br>
-                        <strong>Password: </strong>qwer1234</p>
-                    <p>To simulate a 10486 error:<br>
-                       <strong>Email: </strong>CCREJECT-REFUSED_AU@paypal.com<br>
+                    <strong>Email: </strong>jane.doe@email.xyz<br>
+                    <strong>Password: </strong>qwer1234
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Simulate an instrument decline on Sandbox</h3>
+                </div>
+                <div class="panel-body">
+                        <strong>Email: </strong>CCREJECT-REFUSED_AU@paypal.com<br>
                         <strong>Password: </strong>qwer1234</p>
                 </div>
             </div>
         </div>
     </div>
-""")))}),format.raw/*94.2*/("""
+""")))}),format.raw/*99.2*/("""
 """))
       }
     }
@@ -145,11 +150,11 @@ Seq[Any](format.raw/*1.22*/("""
 object payment extends payment_Scope0.payment
               /*
                   -- GENERATED --
-                  DATE: Fri May 26 23:05:40 AEST 2017
+                  DATE: Fri May 26 23:33:19 AEST 2017
                   SOURCE: /Users/clkaiser/IdeaProjects/ck-tam-assignment/app/views/payment.scala.html
-                  HASH: 91a8d4abda51afee153a8be6dea41d447026f8bc
-                  MATRIX: 749->1|847->23|861->30|941->34|973->40|1320->360|1348->361|1386->372|1435->395|1466->406|1502->415|1530->416|1589->21|1617->436|1646->439|1678->462|1718->464|1750->469|5719->4410
-                  LINES: 27->1|31->2|31->2|33->2|35->4|39->8|39->8|40->9|40->9|40->9|41->10|41->10|46->1|47->14|49->16|49->16|49->16|50->17|127->94
+                  HASH: bd151d986cab1fdc96c23f0f57873835a49651a4
+                  MATRIX: 749->1|847->23|861->30|941->34|973->40|1320->360|1348->361|1386->372|1435->395|1466->406|1502->415|1530->416|1589->21|1617->436|1646->439|1678->462|1718->464|1750->469|5899->4590
+                  LINES: 27->1|31->2|31->2|33->2|35->4|39->8|39->8|40->9|40->9|40->9|41->10|41->10|46->1|47->14|49->16|49->16|49->16|50->17|132->99
                   -- GENERATED --
               */
           
