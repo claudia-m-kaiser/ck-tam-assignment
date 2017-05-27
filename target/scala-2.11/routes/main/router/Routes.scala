@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/clkaiser/IdeaProjects/ck-tam-assignment/conf/routes
-// @DATE:Tue May 23 20:39:11 AEST 2017
+// @DATE:Sat May 27 21:09:25 AEST 2017
 
 package router
 
@@ -16,18 +16,18 @@ import _root_.play.libs.F
 
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
-  // @LINE:6
+  // @LINE:1
   HomeController_0: controllers.HomeController,
-  // @LINE:16
+  // @LINE:4
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
-    // @LINE:6
+    // @LINE:1
     HomeController_0: controllers.HomeController,
-    // @LINE:16
+    // @LINE:4
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, Assets_1, "/")
 
@@ -43,7 +43,7 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.HomeController.index()"""),
+    ("""GET""", this.prefix, """controllers.HomeController.payment()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """client-token""", """controllers.HomeController.getClientToken()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sale""", """controllers.HomeController.saleTransaction()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -55,24 +55,24 @@ class Routes(
   }}
 
 
-  // @LINE:6
-  private[this] lazy val controllers_HomeController_index0_route = Route("GET",
+  // @LINE:1
+  private[this] lazy val controllers_HomeController_payment0_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_0.index(),
+  private[this] lazy val controllers_HomeController_payment0_invoker = createInvoker(
+    HomeController_0.payment(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "index",
+      "payment",
       Nil,
       "GET",
-      """ An example controller showing a sample home page""",
+      """""",
       this.prefix + """"""
     )
   )
 
-  // @LINE:9
+  // @LINE:2
   private[this] lazy val controllers_HomeController_getClientToken1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("client-token")))
   )
@@ -84,12 +84,12 @@ class Routes(
       "getClientToken",
       Nil,
       "GET",
-      """ Client token controller""",
+      """""",
       this.prefix + """client-token"""
     )
   )
 
-  // @LINE:10
+  // @LINE:3
   private[this] lazy val controllers_HomeController_saleTransaction2_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sale")))
   )
@@ -106,7 +106,7 @@ class Routes(
     )
   )
 
-  // @LINE:16
+  // @LINE:4
   private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
@@ -118,12 +118,12 @@ class Routes(
       "versioned",
       Seq(classOf[String], classOf[Asset]),
       "GET",
-      """ Map static resources from the /public folder to the /assets URL path""",
+      """""",
       this.prefix + """assets/""" + "$" + """file<.+>"""
     )
   )
 
-  // @LINE:18
+  // @LINE:5
   private[this] lazy val controllers_HomeController_javascriptRoutes4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("javascriptRoutes")))
   )
@@ -143,31 +143,31 @@ class Routes(
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
-    // @LINE:6
-    case controllers_HomeController_index0_route(params) =>
+    // @LINE:1
+    case controllers_HomeController_payment0_route(params) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_0.index())
+        controllers_HomeController_payment0_invoker.call(HomeController_0.payment())
       }
   
-    // @LINE:9
+    // @LINE:2
     case controllers_HomeController_getClientToken1_route(params) =>
       call { 
         controllers_HomeController_getClientToken1_invoker.call(HomeController_0.getClientToken())
       }
   
-    // @LINE:10
+    // @LINE:3
     case controllers_HomeController_saleTransaction2_route(params) =>
       call { 
         controllers_HomeController_saleTransaction2_invoker.call(HomeController_0.saleTransaction())
       }
   
-    // @LINE:16
+    // @LINE:4
     case controllers_Assets_versioned3_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
       }
   
-    // @LINE:18
+    // @LINE:5
     case controllers_HomeController_javascriptRoutes4_route(params) =>
       call { 
         controllers_HomeController_javascriptRoutes4_invoker.call(HomeController_0.javascriptRoutes)

@@ -28,6 +28,7 @@ function showPaymentOptions(){
 }
 
 function addressFormIsValid(){
+    //Checking if all input values are at least 2 characters long
     var valid = true;
     $(".form-control").each(function() {
         if($(this).val().length<=2){
@@ -38,7 +39,10 @@ function addressFormIsValid(){
 }
 
 function disableAddressForm(){
-    $(".form-control").each(function(){$(this).prop("disabled", true);});
+    $(".form-control").each(function(){
+        $(this).prop("disabled", true);
+        $(this).removeClass("form-control-success").closest(".form-group").removeClass("has-success");
+    });
     $("#form-button").html("Change address details");
     $("#form-button").removeClass("btn-success").addClass("btn-default");
     $("#form-button").attr("data-button-action", "changeAddress");
@@ -110,9 +114,12 @@ function loadPayPalButton(clientToken){
                     return paypalCheckoutInstance.tokenizePayment(data)
                         .then(function (payload) {
                                 $("#overlay").fadeIn();
+
+                            //Submitting payment method nonce to the server
                             $.post(jsRoutes.controllers.HomeController.saleTransaction(), { nonce: payload.nonce })
                                 .done(data => {
                                     if(data.processorResponseCode === "2074"){
+                                        //Restarting PayPal flow, after an instrument decline
                                         actions.restart();
                                     }else
                                     {
@@ -122,7 +129,6 @@ function loadPayPalButton(clientToken){
                                 })
                                 .fail(() => { alert("Error creating transaction");});
 
-                            // Submit `payload.nonce` to your server
                         });
                 },
 
@@ -145,6 +151,8 @@ function loadPayPalButton(clientToken){
 }
 
 $( ".form-control").keyup(function() {
+
+    //Inputs values less than 2 characters long will be considered invalid.
     if($(this).val().length >= 2)  {
         $(this).removeClass("form-control-error").closest(".form-group").removeClass("has-error");
         $(this).addClass("form-control-success").closest(".form-group").addClass("has-success");
@@ -155,6 +163,8 @@ $( ".form-control").keyup(function() {
 });
 
 function showTransactionResult(transaction){
+
+    //Displaying the transaction result on the page
     $("#json").html(JSON.stringify(transaction,null,3));
     $("#transactionResult").removeClass("hidden");
 
