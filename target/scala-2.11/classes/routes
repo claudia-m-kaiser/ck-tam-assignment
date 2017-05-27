@@ -1,5 +1,0 @@
-GET     /                           controllers.HomeController.payment()
-GET     /client-token               controllers.HomeController.getClientToken()
-POST    /sale                       controllers.HomeController.saleTransaction()
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-GET     /javascriptRoutes           controllers.HomeController.javascriptRoutes

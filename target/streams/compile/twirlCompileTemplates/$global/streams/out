@@ -1,4 +1,0 @@
-[error] /Users/clkaiser/IdeaProjects/ck-tam-assignment/app/views/index.scala.html:106: Expected ending '}'
-[error] </html>
-[error]        ^
-[error] (compile:twirlCompileTemplates) Twirl compilation failed
