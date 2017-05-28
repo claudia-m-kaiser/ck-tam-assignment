@@ -63,7 +63,7 @@ Password: qwer1234
 
 ## Built With
 
-* Back-end - Java and Play Framework [Play](https://www.playframework.com/) - The web framework used
+* Back-end - Java and [Play Framework](https://www.playframework.com/)
 * Front-end - [Bootstrap](http://getbootstrap.com/) and [FontAwesome](http://fontawesome.io/)
 
 ## Author
