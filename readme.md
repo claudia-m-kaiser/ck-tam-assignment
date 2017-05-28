@@ -50,15 +50,15 @@ You will see the following output. The application will run on port 9000 on loca
 To simulate a successful transaction, you can use this Sandbox account.
 
 ```
-**Email:** jane.doe@email.xyz
-**Password:** qwer1234
+Email: jane.doe@email.xyz
+Password: qwer1234
 ```
 
 To simulate an instrument decline you can use this Sandbox account. It has been set up to trigger an instrument decline.
 
 ```
-**Email:** CCREJECT-REFUSED_AU@paypal.com
-**Password:** qwer1234
+Email: CCREJECT-REFUSED_AU@paypal.com
+Password: qwer1234
 ```
 
 ## Built With
@@ -68,5 +68,5 @@ To simulate an instrument decline you can use this Sandbox account. It has been 
 
 ## Author
 
-* **Claudia Kaiser** 
+Claudia Kaiser
 
