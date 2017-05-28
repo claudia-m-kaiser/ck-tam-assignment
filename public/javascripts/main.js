@@ -59,7 +59,7 @@ function enableAddressForm(){
 }
 
 
-
+//Address form validation
 $( ".form-control").keyup(function() {
 
     //Inputs values less than 2 characters long will be considered invalid.

@@ -8,15 +8,17 @@
                     <h3 class="panel-title">Transaction Information</h3>
                 </div>
                 <div class="panel-body">
-                    Transaction Id: @transaction.getId() <br>
-                    Status: @transaction.getStatus().toString() <br>
-                    Processor Response Code: @transaction.getProcessorResponseCode()<br>
-                    Processor Response Text: @transaction.getProcessorResponseText()<br>
-
-                    result.put("processorResponseText", transaction.getProcessorResponseText());
-                    result.set("paypalDetails", Json.toJson(transaction.getPayPalDetails()));
+                    <strong>Transaction Id:</strong> @transaction.getId() <br>
+                    <strong>Status:</strong> @transaction.getStatus().toString() <br>
+                    <strong>Processor Response Code:</strong> @transaction.getProcessorResponseCode()<br>
+                    <strong>Processor Response Text:</strong> @transaction.getProcessorResponseText()<br>
+                    <strong>Payer Email:</strong> @transaction.getPayPalDetails().getPayerEmail()<br>
+                    <strong>Payer Id:</strong> @transaction.getPayPalDetails().getPayerId()<br>
+                    <strong>Authorization Id:</strong> @transaction.getPayPalDetails().getAuthorizationId()<br>
+                    <strong>Capture Id:</strong> @transaction.getPayPalDetails().getCaptureId()
                 </div>
             </div>
+            <a href="/">Start over</a>
         </div>
     </div>
 }

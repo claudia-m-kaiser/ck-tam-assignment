@@ -70,7 +70,6 @@ function loadPayPalButton(clientToken){
                                         }else
                                         {
                                             document.location.href = "/confirmation?transactionId=" + data.id;
-                                            hideOverlay();
                                         }
                                     })
                                     .fail(() => { alert("Error creating transaction");});

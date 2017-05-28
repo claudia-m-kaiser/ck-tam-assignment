@@ -65,7 +65,6 @@ public class HomeController extends Controller {
         result.put("processorResponseText", transaction.getProcessorResponseText());
         result.set("paypalDetails", Json.toJson(transaction.getPayPalDetails()));
 
-        transaction.getPayPalDetails.
         return result;
     }
 
