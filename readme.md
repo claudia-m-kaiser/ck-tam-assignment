@@ -1,4 +1,4 @@
-# CK TAM Assignment
+# Claudia Kaiser TAM Assignment
 
 This application is a simple Express Checkout integration.
 It includes the following Express Checkout features
