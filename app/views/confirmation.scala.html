@@ -1,0 +1,22 @@
+@(transaction:com.braintreegateway.Transaction)
+
+@main("Confirmation") {
+    <div class="row">
+        <div class="col-md-12 text-left">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Transaction Information</h3>
+                </div>
+                <div class="panel-body">
+                    Transaction Id: @transaction.getId() <br>
+                    Status: @transaction.getStatus().toString() <br>
+                    Processor Response Code: @transaction.getProcessorResponseCode()<br>
+                    Processor Response Text: @transaction.getProcessorResponseText()<br>
+
+                    result.put("processorResponseText", transaction.getProcessorResponseText());
+                    result.set("paypalDetails", Json.toJson(transaction.getPayPalDetails()));
+                </div>
+            </div>
+        </div>
+    </div>
+}

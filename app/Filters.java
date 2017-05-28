@@ -1,4 +1,3 @@
-import play.filters.csrf.CSRFFilter;
 import play.filters.headers.SecurityHeadersFilter;
 import play.filters.hosts.AllowedHostsFilter;
 import play.http.DefaultHttpFilters;

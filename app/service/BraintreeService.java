@@ -14,7 +14,6 @@ public class BraintreeService {
     private BraintreeGateway gateway;
 
     @Inject
-
     public BraintreeService(Configuration conf) {
         //Generating new Braintree client token
         this.gateway = new BraintreeGateway(
@@ -38,6 +37,10 @@ public class BraintreeService {
         Result<Transaction> transactionResult = this.gateway.transaction().sale(transactionRequest);
 
         return transactionResult;
+    }
+
+    public Transaction getTransaction(String id){
+        return this.gateway.transaction().find(id);
     }
 
 

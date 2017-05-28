@@ -15,7 +15,7 @@
 
 @main("Payment",scripts) {
     <div class="row">
-        <div class="col-md-6 text-left">
+        <div class="col-md-12 text-left">
             <div href="#address-form" id="address-form" class="row">
                 <div class="col-md-12 text-left">
                     <h5>Please enter your shipping details</h5>
@@ -59,18 +59,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 text-left">
-            <div class="row hidden" id="transactionResult">
-                <div class="col-md-12">
-                    <div class="alert" id="payment-alert" role="alert"></div>
-                    <pre id="json"></pre>
-                </div>
-            </div>
-        </div>
     </div>
     <hr>
     <div class="row hidden" href="#payment" id="payment">
-        <div class="col-md-6 text-left">
+        <div class="col-md-4 text-left">
             <h5>Please click the PayPal button to complete your payment</h5>
             <i class="fa fa-spinner fa-spin fa-3x fa-fw" id="loading-paypal-spinner"></i>
             <div id="paypal-button"> </div>
