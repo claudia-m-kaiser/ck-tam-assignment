@@ -63,10 +63,7 @@ function loadPayPalButton(clientToken){
                                             .done(data => {
                                             if(data.processorResponseCode === "2074"){
                                             //Restarting PayPal flow, after an instrument decline
-                                            showOverlay("There was an issue processing your payment. Please try a different payment method...");
-                                            setTimeout(function() {
-                                                actions.restart();
-                                            }, 2000);
+                                            actions.restart();
                                         }else
                                         {
                                             document.location.href = "/confirmation?transactionId=" + data.id;
