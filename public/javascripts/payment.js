@@ -48,6 +48,7 @@ function loadPayPalButton(clientToken){
                     // Set up PayPal with the checkout.js library
                     paypal.Button.render({
                         env: "sandbox", // or "production"
+                        commit: true,
 
                         payment: function () {
                             return paypalCheckoutInstance.createPayment(options);
